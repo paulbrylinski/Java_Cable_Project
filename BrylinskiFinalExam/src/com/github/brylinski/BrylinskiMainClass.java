@@ -6,8 +6,7 @@ package com.github.brylinski;
 
 import java.util.Scanner;
 
-public class BrylinskiMainClass
-{
+public class BrylinskiMainClass {
 
 	// Constants
 	public static final String PLAN_NAME_A = "EcoPlan (45+ channels)";
@@ -73,51 +72,38 @@ public class BrylinskiMainClass
 		// Prime Read of planSelection
 		planSelection = validatePlanSelection(input);
 
-		while (planSelection != 'Q') 
-		{// open validate
+		while (planSelection != 'Q') {
 			upgradeSelection = validateUpgradeSelection(input);
 			paymentSelection = validatePaymentSelection(input);
 
 			// PROCESS SELECTION
-			if (planSelection == 'A') 
-			{
+			if (planSelection == 'A') {
 				planName = PLAN_NAME_A;
 				planCost = PLAN_PRICE_A;
 				planCountA++;
-			}
-			else if (planSelection == 'B') 
-			{
+			} else if (planSelection == 'B') {
 				planName = PLAN_NAME_B;
 				planCost = PLAN_PRICE_B;
 				planCountB++;
-			}
-			else 
-			{
+			} else {
 				planName = PLAN_NAME_C;
 				planCost = PLAN_PRICE_B;
 				planCountC++;
 			}
 
-			if (upgradeSelection == 'A') 
-			{
+			if (upgradeSelection == 'A') {
 				upgradeName = UPGRADE_NAME_A;
 				upgradeCost = UPGRADE_PRICE_A;
 				upgradeCountA++;
-			}
-			else if (upgradeSelection == 'B') 
-			{
+			} else if (upgradeSelection == 'B') {
 				upgradeName = UPGRADE_NAME_B;
 				upgradeCost = UPGRADE_PRICE_B;
 				upgradeCountB++;
-			}
-			else if (upgradeSelection == 'C') 
-			{
+			} else if (upgradeSelection == 'C') {
 				upgradeName = UPGRADE_NAME_C;
 				upgradeCost = UPGRADE_PRICE_C;
 				upgradeCountC++;
-			}
-			else 
-			{
+			} else {
 				upgradeName = UPGRADE_NAME_D;
 				upgradeCost = UPGRADE_PRICE_D;
 				upgradeCountD++;
@@ -125,20 +111,15 @@ public class BrylinskiMainClass
 
 			// PROCESS SELECTION
 
-			if (paymentSelection == 'A') 
-			{
+			if (paymentSelection == 'A') {
 				paymentName = PAYMENT_NAME_A;
 				paymentFee = PAYMENT_FEE_A;
 				paymentTypeCountA++;
-			}
-			else if (paymentSelection == 'B') 
-			{
+			} else if (paymentSelection == 'B') {
 				paymentName = PAYMENT_NAME_B;
 				paymentFee = PAYMENT_FEE_B;
 				paymentTypeCountB++;
-			}
-			else 
-			{
+			} else {
 				paymentName = PAYMENT_NAME_C;
 				paymentFee = PAYMENT_FEE_C;
 				paymentTypeCountC++;
@@ -159,8 +140,7 @@ public class BrylinskiMainClass
 		} // end of validate statements
 
 		// if statement for planCounter
-		if (totalCountSales > 0) 
-		{
+		if (totalCountSales > 0) {
 
 			displayFinalReport(userName, planCountA, planCountB, planCountC, upgradeCountA, upgradeCountB,
 					upgradeCountC, upgradeCountD, paymentTypeCountA, paymentTypeCountB, paymentTypeCountC,
@@ -174,22 +154,19 @@ public class BrylinskiMainClass
 
 	}// end of main class
 
-	public static void displayWelcomeBanner() 
-	{
+	public static void displayWelcomeBanner() {
 		System.out.println("Welcome to the plan selection tool.");
 		System.out.println("This program allows the ablity to pick cable and internet");
 		System.out.println("plans and keep up with all counts & total sales.");
 	}
 
-	public static void displayFarewellBanner() 
-	{
+	public static void displayFarewellBanner() {
 		System.out.printf("Thanks For Using the plan selection tool.\n");
 		System.out.printf("As always, we appreciate your business!\n");
 		System.out.printf("Visit Our Website at www.bettercableandinternet.com\n");
 	}
 
-	public static void displayPlanMenu() 
-	{// begin plan menu
+	public static void displayPlanMenu() {
 		System.out.printf("-------------------------------------------------------\n");
 		System.out.printf("MAIN MENU\n");
 		System.out.printf("%-6s%-40s%-1s%5.2f\n", "[A]", PLAN_NAME_A, "$", PLAN_PRICE_A);
@@ -200,8 +177,7 @@ public class BrylinskiMainClass
 		System.out.print("Enter Your Selection Here: ");
 	}
 
-	public static void displayUpgradeMenu() 
-	{
+	public static void displayUpgradeMenu() {
 		System.out.printf("-------------------------------------------------------\n");
 		System.out.printf("UPGRADE MENU\n");
 		System.out.printf("%-6s%-38s%-1s%7.2f\n", "[A]", UPGRADE_NAME_A, "$", UPGRADE_PRICE_A);
@@ -213,8 +189,7 @@ public class BrylinskiMainClass
 		System.out.print("Enter Your Selection Here: ");
 	}
 
-	public static void displayPaymentMenu() 
-	{
+	public static void displayPaymentMenu() {
 		System.out.printf("-------------------------------------------------------\n");
 		System.out.printf("TRANSPORTATION MENU\n");
 		System.out.printf("%-6s%-35s%2s%4.1f%6s\n", "[A]", PAYMENT_NAME_A, "@", PAYMENT_FEE_A * 100, "% Fee");
@@ -227,8 +202,7 @@ public class BrylinskiMainClass
 
 	public static void displayOrderReport(String borrowedplanName, double borrowedPlanCost, String borrowedUpgradeName,
 			double borrowedUpgradeCost, String borrowedPaymentName, double borrowedPaymentFee,
-			double borrowedPaymentFeeAmount, double borrowedOrderTotal) 
-	{// begin order report
+			double borrowedPaymentFeeAmount, double borrowedOrderTotal) {
 
 		// OUTPUT
 		System.out.printf("---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- \n");
@@ -252,9 +226,7 @@ public class BrylinskiMainClass
 	public static void displayFinalReport(String borrowedUserName, int borrowedPlanCountA, int borrowedPlanCountB,
 			int borrowedPlanCountC, int borrowedUpgradeCountA, int borrowedUpgradeCountB, int borrowedUpgradeCountC,
 			int borrowedUpgradeCountD, int borrowedPaymentTypeCountA, int borrowedPaymentTypeCountB,
-			int borrowedPaymentTypeCountC, int borrowedTotalCountSales, double borrowedGrandTotalSales) 
-	{// begin final
-																											// report
+			int borrowedPaymentTypeCountC, int borrowedTotalCountSales, double borrowedGrandTotalSales) {
 
 		// OUTPUT
 		System.out.printf("---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- \n");
@@ -284,23 +256,20 @@ public class BrylinskiMainClass
 	}// end of final report
 
 	// Begin VR Methods
-	public static String getUserName(Scanner borrowedInput) 
-	{
+	public static String getUserName(Scanner borrowedInput) {
 		System.out.print("Enter Your Username: ");
 		return borrowedInput.nextLine();
 	}// end userName VR method
 
 	// VR method for planSelection
-	public static char validatePlanSelection(Scanner borrowedInput) 
-	{// scanner declared, opening planSelection
-																
+	public static char validatePlanSelection(Scanner borrowedInput) {
+
 		char localSelection = ' ';
 		displayPlanMenu();
 		localSelection = borrowedInput.next().toUpperCase().charAt(0);
 
 		// While
-		while (localSelection != 'A' && localSelection != 'B' && localSelection != 'C' && localSelection != 'Q') 
-		{
+		while (localSelection != 'A' && localSelection != 'B' && localSelection != 'C' && localSelection != 'Q') {
 			// invalid selection - new loop
 			System.out.printf("---- Invalid Selection ----\n");
 			// update read
@@ -311,14 +280,12 @@ public class BrylinskiMainClass
 	}// end of VR method
 
 	// VR method for upgradeSelection
-	public static char validateUpgradeSelection(Scanner borrowedInput) 
-	{
+	public static char validateUpgradeSelection(Scanner borrowedInput) {
 		char localSelection = ' ';
 		displayUpgradeMenu();
 		localSelection = borrowedInput.next().toUpperCase().charAt(0);
 
-		while (localSelection != 'A' && localSelection != 'B' && localSelection != 'C' && localSelection != 'D') 
-		{
+		while (localSelection != 'A' && localSelection != 'B' && localSelection != 'C' && localSelection != 'D') {
 
 			// invalid selection - new loop
 			System.out.printf("---- Invalid Selection ----\n");
@@ -330,16 +297,14 @@ public class BrylinskiMainClass
 	}// end of VR method
 
 	// VR method for paymentSelection
-	public static char validatePaymentSelection(Scanner borrowedInput) 
-	{// scanner declared, opening paymentSelection
-									
+	public static char validatePaymentSelection(Scanner borrowedInput) {
+		
 		char localSelection = ' ';
 		displayPaymentMenu();
 		localSelection = borrowedInput.next().toUpperCase().charAt(0);
 
 		// While
-		while (localSelection != 'A' && localSelection != 'B' && localSelection != 'C') 
-		{// begin while curly brace
+		while (localSelection != 'A' && localSelection != 'B' && localSelection != 'C') {
 
 			// invalid selection - new loop
 			System.out.printf("---- Invalid Selection ----\n");
