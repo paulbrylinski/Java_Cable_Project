@@ -293,7 +293,7 @@ public class BrylinskiMainClass
 	// VR method for planSelection
 	public static char validatePlanSelection(Scanner borrowedInput) 
 	{// scanner declared, opening planSelection
-																		// prime read
+																
 		char localSelection = ' ';
 		displayPlanMenu();
 		localSelection = borrowedInput.next().toUpperCase().charAt(0);
